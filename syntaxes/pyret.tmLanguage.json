@@ -1,0 +1,118 @@
+{
+  "name": "Pyret",
+  "scopeName": "source.arr",
+  "fileTypes": [
+    "arr"
+  ],
+  "patterns": [
+    {
+      "comment": "Delimiters",
+      "match": "(!|->|(?<!<)=>|\\[|\\]|{|}|:\\s|;|,)",
+      "name": "keyword.other.delimiters.arr"
+    },
+    {
+      "comment": "()",
+      "match": "(\\(|\\)|\\.|::|:=| \\^ | \\+ | - | \\/ | \\*| >= | <= | <> | == | <=> | =~ |=|>|<)",
+      "name": "variable.arr"
+    },
+    {
+      "comment": false,
+      "match": "(\\|)",
+      "name": "storage.type.delimiters.arr"
+    },
+    {
+      "comment": "Types",
+      "match": "(?<!-)(\\b|^)[A-Z][A-Za-z]*(?!-)(\\b|$)",
+      "name": "entity.name.type.arr"
+    },
+    {
+      "comment": "Basic keywords",
+      "match": "(?x)(?<!-)(\\b|^) (end|type|type-let|newtype|include|import|provide|provide-types|as| fun|lam|check|examples|is|is-not|satisfies|violates| raises|does-not-raise|raises-violates|raises-satisfies|raises-other-than| data|deriving| for|from|and|or|not| if|else|when|cases|ask| spy) (?!-)(\\b|$)",
+      "name": "keyword.operators.arr"
+    },
+    {
+      "comment": "Basic keywords ending non alpha numeric",
+      "match": "(?x)(?<!-)(\\b|^) (block:|doc:|where:|with:|sharing:|then:|otherwise:| is==|is=~|is<=>|is-not==|is-not=~|is-not<=>)",
+      "name": "keyword.operators.arr"
+    },
+    {
+      "comment": "Basic keywords",
+      "match": "(?x)(?<!-)(\\b|^) (var|ref|shadow|let|letrec|rec|method) (?!-)(\\b|$)",
+      "name": "storage.modifier.arr"
+    },
+    {
+      "match": "(?<!-)(\\b|^)(true|false|nothing)(?!-)(\\b|$)",
+      "name": "constant.language"
+    },
+    {
+      "comment": "single quoted strings",
+      "match": "'[^']*'",
+      "name": "string.quoted.single.arr"
+    },
+    {
+      "comment": "double quoted strings",
+      "match": "\"[^\"]*\"",
+      "name": "string.quoted.double.arr"
+    },
+    {
+      "comment": "triple quoted strings",
+      "begin": "```",
+      "end": "```",
+      "name": "string.quoted.triple.arr"
+    },
+    {
+      "comment": "unterminated single quoted string",
+      "match": "'[^']*$",
+      "name": "invalid.illegal"
+    },
+    {
+      "comment": "unterminated double quoted string",
+      "match": "\"[^\"]*$",
+      "name": "invalid.illegal"
+    },
+    {
+      "comment": "numbers",
+      "match": "(?<![a-zA-Z0-9_-])-?[0-9]+([/.][0-9]+)?",
+      "name": "constant.numeric.arr"
+    },
+    {
+      "comment": "rough numbers",
+      "match": "(?<![a-zA-Z0-9_-])~-?[0-9]+(\\.[0-9]+)?",
+      "name": "constant.other.arr"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "comment": "inline comments",
+      "match": "#.*$",
+      "name": "comment.line.number-sign.arr"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "#\\|",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.begin.arr"
+            }
+          },
+          "end": "\\|#",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.end.arr"
+            }
+          },
+          "name": "comment.block.arr",
+          "patterns": [
+            {
+              "include": "#comments"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
