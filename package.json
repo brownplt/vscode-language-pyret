@@ -1,0 +1,28 @@
+{
+    "name": "vscode-language-pyret",
+    "displayName": "Pyret",
+    "description": "Language support for the Pyret Language",
+    "version": "0.0.1",
+    "publisher": "SethPoulsen",
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "icon": "pyret-logo.png",
+    "repository": "https://github.com/SethPoulsen/vscode-language-pyret",
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "pyret",
+            "aliases": ["Pyret", "pyret"],
+            "extensions": [".arr"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "pyret",
+            "scopeName": "source.arr",
+            "path": "./syntaxes/pyret.tmLanguage.json"
+        }]
+    }
+}
