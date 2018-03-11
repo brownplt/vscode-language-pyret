@@ -8,5 +8,4 @@ Ported from https://github.com/brownplt/atom-language-pyret.
 Currently just syntax highlighting. In the future, it would be great to have linting, debugging, and all the other things that are cool to have in language extensions.
 
 # How To
-To install manually, clone into ~/.vscode/extensions. Hopefully this will be
-published in the VS Code extension gallery soon.
+To install manually, clone into ~/.vscode/extensions. Also accessible through the  VS Code extension gallery soon.
